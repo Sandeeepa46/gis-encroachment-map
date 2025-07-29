@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Reports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="report-page-body">
+
+    <div id="report-display-container">
+        <div class="page-header">
+            <h2 id="report-title">Loading Reports...</h2>
+            <button onclick="window.location.href='index.html'" class="back-button">← Back to Map</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search by tank name...">
+        </div>
+        
+        <div id="report-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tank Name</th>
+                        <th>Location</th>
+                        <th>Encroachment Type</th>
+                        <th>Date of Observation</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="report-table-body">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="reports.js"></script>
+</body>
+</html>

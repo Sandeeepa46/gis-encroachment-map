@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Analysis Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body class="report-page-body">
+
+    <div class="dashboard-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h2 id="analysis-title">Loading Analysis...</h2>
+            <button onclick="window.history.back()" class="back-button">← Go Back</button>
+        </div>
+
+        <!-- Summary Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Reports</h3>
+                <p id="total-reports">-</p>
+            </div>
+            <div class="stat-card">
+                <h3>First Report</h3>
+                <p id="first-report-date">-</p>
+            </div>
+            <div class="stat-card">
+                <h3>Last Report</h3>
+                <p id="last-report-date">-</p>
+            </div>
+            <div class="stat-card">
+                <h3>Most Common Type</h3>
+                <p id="common-type">-</p>
+            </div>
+        </div>
+
+        <!-- Time Series Chart Card -->
+        <div class="chart-card">
+            <h3>Reports Over Time</h3>
+            <div class="filter-container">
+                <label for="startDate">From:</label>
+                <input type="date" id="startDate">
+                <label for="endDate">To:</label>
+                <input type="date" id="endDate">
+            </div>
+            <div class="chart-container">
+                <canvas id="time-series-chart"></canvas>
+            </div>
+        </div>
+
+        <!-- Breakdown Chart Card -->
+        <div class="chart-card">
+             <h3>Encroachment Type Breakdown</h3>
+             <div class="chart-container-pie">
+                <canvas id="type-breakdown-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="analysis.js"></script>
+</body>
+</html>

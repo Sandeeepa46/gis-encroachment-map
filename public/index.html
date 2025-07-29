@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Encroachment Reporter - NWP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="map"></div>
+        <div id="header">
+            <!-- ▼▼▼ THIS IS THE UPDATED HEADER TEXT ▼▼▼ -->
+            <h1>Encroachment Monitoring in Tank Reservation Areas – NWP</h1>
+            <button id="show-all-reports-btn">View Submitted Reports</button>
+        </div>
+    </div>
+
+    <!-- The form for submitting data (initially hidden) -->
+    <div id="form-container" class="hidden">
+        <h3>Report Encroachment</h3>
+        <form id="encroachment-form">
+            <label for="tankName">Tank Name:</label>
+            <input type="text" id="tankName" name="tankName" readonly>
+
+            <label for="location">Location (Village/GN Division):</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="encroachmentType">Encroachment Type:</label>
+            <select id="encroachmentType" name="encroachmentType" required>
+                <option value="">Select a type...</option>
+                <option value="Housing">Housing</option>
+                <option value="Farming">Farming</option>
+                <option value="Illegal waste dumping">Illegal waste dumping</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- ▼▼▼ EDIT THIS FIELD ▼▼▼ -->
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Add any extra details..."></textarea>
+            <!-- ▲▲▲ END OF EDITED FIELD ▲▲▲ -->
+
+            <label for="observationDate">Date of Observation:</label>
+            <input type="date" id="observationDate" name="observationDate" required>
+
+            <button type="submit">Submit Report</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
