@@ -5,13 +5,13 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing
-app.use(express.json()); // To parse JSON bodies
-app.use(express.static('public')); // Serve static files from the 'public' folder
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
 
-// DB Config
-// DB Config
-const db = 'mongodb://127.0.0.1:27017/gis-db';
+// DB Config - This now uses the secure environment variable for the Atlas connection string
+const db = process.env.MONGO_URI;
+
 // Connect to MongoDB
 mongoose
     .connect(db)
@@ -21,6 +21,6 @@ mongoose
 // Use Routes
 app.use('/api', require('./routes/api'));
 
-// Define the port and start the server
-const port = 5000;
+// Define the port for hosting and start the server
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
