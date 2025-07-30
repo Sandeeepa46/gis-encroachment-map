@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch all reports from the server
     const fetchReports = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/encroachments');
+            const response = await fetch('https://gis-encroachment-map-production.up.railway.app/api/encroachments');
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             
             allReports = await response.json();
