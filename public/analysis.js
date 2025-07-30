@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     analysisTitle.textContent = `Analysis Dashboard for: ${tankName}`;
-    const apiUrl = `http://localhost:5000/api/encroachments?tankName=${encodeURIComponent(tankName)}`;
+        const apiUrl = `https://gis-encroachment-map-production.up.railway.app/api/encroachments?tankName=${encodeURIComponent(tankName)}`;
 
     // --- DATA PROCESSING & RENDERING FUNCTIONS ---
 

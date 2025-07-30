@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/api/encroachments', {
+            const response = await fetch('https://gis-encroachment-map-production.up.railway.app/api/encroachments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
